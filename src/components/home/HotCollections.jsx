@@ -5,7 +5,7 @@ import "./HotCollections.css";
 import Skeleton from "../UI/Skeleton";
 import { Carousel } from "../common";
 
-const Item = ({ nftImage, title, authorImage, code, isLoading }) => {
+const Item = ({ nftImage, title, authorImage, code, isLoading, authorId }) => {
   if (isLoading) {
     return (
       <div className="nft_coll">
@@ -32,7 +32,7 @@ const Item = ({ nftImage, title, authorImage, code, isLoading }) => {
         </Link>
       </div>
       <div className="nft_coll_pp">
-        <Link to="/author">
+        <Link to={`/author/${authorId}`}>
           <img className="lazy pp-coll" src={authorImage} alt="" />
         </Link>
         <i className="fa fa-check"></i>

@@ -3024,7 +3024,7 @@ a.btn-slider:hover {
 }
 
 a.btn-main:hover,
-.btn-main:hover {
+.btn-main:not(:disabled):hover {
   color: #fff;
   -webkit-box-shadow: 2px 2px 20px 0px rgba(var(--secondary-color-rgb), 0.5);
   -moz-box-shadow: 2px 2px 20px 0px rgba(var(--secondary-color-rgb), 0.5);
