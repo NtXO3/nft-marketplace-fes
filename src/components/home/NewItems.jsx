@@ -158,7 +158,6 @@ const Card = ({
 
 const NewItems = () => {
   const [items, setItems] = useState([]);
-  console.log(items);
 
   const fetchNewItems = async () => {
     const { data } = await axios.get(
