@@ -1,11 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
 import "./HotCollections.css";
 import Skeleton from "../UI/Skeleton";
+import { Carousel } from "../common";
 
 const Item = ({ nftImage, title, authorImage, code, isLoading }) => {
   if (isLoading) {
@@ -49,26 +47,6 @@ const Item = ({ nftImage, title, authorImage, code, isLoading }) => {
   );
 };
 
-const NextArrow = (props) => {
-  const { onClick } = props;
-
-  return (
-    <button className="arrowButton" onClick={onClick}>
-      ›
-    </button>
-  );
-};
-
-const PrevArrow = (props) => {
-  const { onClick } = props;
-
-  return (
-    <button className="arrowButton arrowButton__prev" onClick={onClick}>
-      ‹
-    </button>
-  );
-};
-
 const HotCollections = () => {
   const [items, setItems] = useState([]);
 
@@ -93,25 +71,11 @@ const HotCollections = () => {
               <div className="small-border bg-color-2"></div>
             </div>
           </div>
-          <Slider
-            slidesToShow={4}
-            dots={false}
-            draggable={false}
-            infinite
-            swipe={false}
-            arrows
-            nextArrow={<NextArrow />}
-            prevArrow={<PrevArrow />}
-            responsive={[
-              { breakpoint: 1024, settings: { slidesToShow: 3 } },
-              { breakpoint: 760, settings: { slidesToShow: 2 } },
-              { breakpoint: 580, settings: { slidesToShow: 1 } },
-            ]}
-          >
+          <Carousel>
             {items.length > 0
               ? items.map((item) => <Item {...item} key={item.id} />)
               : new Array(4).fill(0).map(() => <Item isLoading />)}
-          </Slider>
+          </Carousel>
         </div>
       </div>
     </section>
