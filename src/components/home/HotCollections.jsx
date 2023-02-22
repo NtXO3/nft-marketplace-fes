@@ -5,7 +5,15 @@ import "./HotCollections.css";
 import Skeleton from "../UI/Skeleton";
 import { Carousel } from "../common";
 
-const Item = ({ nftImage, title, authorImage, code, isLoading, authorId }) => {
+const Item = ({
+  nftImage,
+  title,
+  authorImage,
+  code,
+  isLoading,
+  authorId,
+  nftId,
+}) => {
   if (isLoading) {
     return (
       <div className="nft_coll">
@@ -27,7 +35,7 @@ const Item = ({ nftImage, title, authorImage, code, isLoading, authorId }) => {
   return (
     <div className="nft_coll">
       <div className="nft_wrap">
-        <Link to="/item-details">
+        <Link to={`/item-details/${nftId}`}>
           <img src={nftImage} className="lazy img-fluid" alt={title} />
         </Link>
       </div>
@@ -38,7 +46,7 @@ const Item = ({ nftImage, title, authorImage, code, isLoading, authorId }) => {
         <i className="fa fa-check"></i>
       </div>
       <div className="nft_coll_info">
-        <Link to="/explore">
+        <Link to={`/item-details/${nftId}`}>
           <h4>{title}</h4>
         </Link>
         <span>ERC-{code}</span>
