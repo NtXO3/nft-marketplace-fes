@@ -16,7 +16,7 @@ const Item = ({
 }) => {
   if (isLoading) {
     return (
-      <div className="nft_coll">
+      <div className="nft_coll" data-aos="fade-up">
         <div className="nft_wrap">
           <Skeleton width="100%" height="100%" />
         </div>
@@ -33,7 +33,7 @@ const Item = ({
   }
 
   return (
-    <div className="nft_coll">
+    <div className="nft_coll" data-aos="fade-up">
       <div className="nft_wrap">
         <Link to={`/item-details/${nftId}`}>
           <img src={nftImage} className="lazy img-fluid" alt={title} />
@@ -74,7 +74,7 @@ const HotCollections = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div data-aos="fade-up" className="text-center">
               <h2>Hot Collections</h2>
               <div className="small-border bg-color-2"></div>
             </div>
