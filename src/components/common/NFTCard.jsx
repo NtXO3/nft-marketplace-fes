@@ -41,7 +41,7 @@ const NFTCard = ({
 
   if (isLoading) {
     return (
-      <div className={className}>
+      <div className={className} data-aos="fade-up">
         <div className="nft__item">
           <div className="author_list_pp">
             <Skeleton width="100%" height={50} borderRadius="50%" />
@@ -93,7 +93,7 @@ const NFTCard = ({
   }
 
   return (
-    <div className={className}>
+    <div className={className} data-aos="fade-up">
       <div className="nft__item">
         <div className="author_list_pp">
           <Link

@@ -14,7 +14,7 @@ const Seller = ({
 }) => {
   if (isLoading) {
     return (
-      <li>
+      <li data-aos="fade-up">
         <div className="author_list_pp">
           <div>
             <Skeleton width={50} height={50} borderRadius="50%" />
@@ -30,7 +30,7 @@ const Seller = ({
   }
 
   return (
-    <li>
+    <li data-aos="fade-up">
       <div className="author_list_pp">
         <Link to={`/author/${authorId}`}>
           <img className="lazy pp-author" src={authorImage} alt={authorName} />
@@ -64,7 +64,7 @@ const TopSellers = () => {
       <div className="container">
         <div className="row">
           <div className="col-lg-12">
-            <div className="text-center">
+            <div data-aos="fade-up" className="text-center">
               <h2>Top Sellers</h2>
               <div className="small-border bg-color-2"></div>
             </div>
